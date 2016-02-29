@@ -27,7 +27,7 @@ class Sitemaps(Sitemap):
     changefreq = 'monthly'
 
     def items(self):
-        return ['venue', 'accomodation', 'contactus', 'travel', 'register', 'cookies', 'index']
+        return ['venue', 'accomodation', 'contactus', 'travel', 'register', 'uploadAbstract', 'cookies', 'index']
 
     def location(self, item):
         return reverse(item)
@@ -43,6 +43,7 @@ urlpatterns = [
     url(r'^contactus/', 'mainApp.views.contactus', name='contactus'),
     url(r'^travel/', 'mainApp.views.travel', name='travel'),
     url(r'^register/', include('register.urls')),
+    url(r'^uploadAbstract/', include('uploadAbstract.urls')),
     url(r'^cookies/', 'mainApp.views.cookies', name='cookies'),
     url(r'^$', 'mainApp.views.index', name='index'),
     url(r'^index', 'mainApp.views.index', name='index'),
