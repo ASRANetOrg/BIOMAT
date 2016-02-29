@@ -224,3 +224,12 @@ color: white; !important;
     color: white; !important;
     font-size: larger;
 }
+
+.back-to-top{
+
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    color: chocolate;
+
+}
