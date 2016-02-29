@@ -1,0 +1,26 @@
+{% extends 'baseTemplates/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    {% with 'title' as expectedVarName %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="form-body">
+        <div class="row featurette col-md-8 col-md-offset-2">
+
+            <h2 class="featurette-heading">{% block form_title %}{% endblock %}</h2>
+
+
+            {% crispy form %}
+
+
+        </div>
+
+    </div>
+
+{% endblock %}

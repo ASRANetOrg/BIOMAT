@@ -1,0 +1,14 @@
+{% extends 'baseTemplates/formBase.html' %}
+
+{% block title %}Upload Abstract{% endblock %}
+{% block form_title %}Upload Abstract{% endblock %}
+
+{% block form_action %}"/uploadAbstract/"{% endblock %}
+
+{% block submit_value %}"Submit Abstract"{% endblock %}
+
+{% block body_block %}
+  {% with 'form' as expectedVarName %}
+  {{block.super}}
+  {% endwith %}
+{% endblock %}

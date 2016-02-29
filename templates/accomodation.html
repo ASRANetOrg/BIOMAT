@@ -1,0 +1,47 @@
+{% extends 'baseTemplates/base.html' %}
+{% load staticfiles %}
+
+{% block title %}Home{% endblock %}
+
+{% block body_block %}
+
+<div class="row featurette" style="margin-left: 5%; margin-right: 5%">
+
+    <h2 class="featurette-heading" id="averagePrices">Average Hotel Prices</h2>
+
+    <p class="lead">Below are the average prices per person per night for hotels in Glasgow.</p>
+
+        <table class="table col-md-12">
+            <tr>
+                <td>The Glasgow City Hotel (formerly The Thistle Hotel)</td>
+                <td>From £59</td>
+            </tr>
+            <tr>
+                <th>Star rating</th>
+                <th>Average Price</th>
+            </tr>
+            <tr>
+                <td>Mercure Glasgow City</td>
+                <td>From £49</td>
+            </tr>
+            <tr>
+                <td>The Brunswick Hotel</td>
+                <td>From £50</td>
+            </tr>
+            <tr>
+                <td>Holiday Inn City Centre</td>
+                <td>From £54</td>
+            </tr>
+            <tr>
+                <td>The Grand Central Hotel</td>
+                <td>From £71</td>
+            </tr>
+            <tr>
+                <td>Premier Inn George Square</td>
+                <td>From £56</td>
+            </tr>
+        </table>
+
+</div>
+
+{% endblock %}

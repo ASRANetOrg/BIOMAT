@@ -1,0 +1,50 @@
+{% extends 'baseTemplates/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    {% with 'title' as expectedVarName %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block carousel %}
+    {% with 'carousel' as expectedVarName %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="side-navigation col-md-4" id="sidebar">
+        <ul class="nav nav-pills nav-stacked" id="sidebarNav" data-spy="affix">
+            {% for story in story_list %}
+                <li><a href="#{{ story.id }}">{{ story.headline }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="main-body">
+
+        {% for story in story_list %}
+
+            <div class="row featurette">
+
+                <h2 class="featurette-heading" id="{{ story.id }}">
+                    {{ story.headline }}
+                </h2>
+
+                {% autoescape off %}
+                    {{ story.table_class }}
+                {% endautoescape %}
+
+            </div>
+
+            <hr class="featurette-divider">
+
+        {% endfor %}
+
+        {% block additions_block %}{% endblock %}
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DISS Registration</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="row">
+    <p class="col-md-8">Dear {{ salutation }} {{ last_name }},</p>
+    <img class="col-md-2 pull-right" src="cid:asranetLogo.jpg" alt="ASRANet Logo">
+</div>
+
+<br>
+
+<div class="col-md-12">
+    <p>{{ text_body }}. Please <a href="mailto: info@asranet.co.uk">contact us</a> if you have
+        any questions regarding the conference.</p>
+</div>
+
+<hr class="featurette-divider">
+
+<a href="http://asranet.co.uk">ASRANet Ltd</a>
+
+
+</body>
+</html>
