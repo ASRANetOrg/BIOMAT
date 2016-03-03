@@ -24,17 +24,5 @@ class Item(models.Model):
         new_self = new_self.replace('<p>', '<p style="text-align: justify">')
         return new_self
 
-
-class Entry(models.Model):
-    # ...
-    def save(self, force_insert=False, force_update=False):
-        super(Entry, self).save(force_insert, force_update)
-        try:
-            ping_google()
-        except Exception:
-            # Bare 'except' because we could get a variety
-            # of HTTP-related exceptions.
-            pass
-
     def __unicode__(self):
         return str(self.order)
