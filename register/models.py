@@ -38,5 +38,7 @@ class User(models.Model):
         email_admin(self, "New CORE 2016 Registrant", "Please find enclosed the details for the new CORE "
                                                       "2016 registrant.", sorted_self)
 
+        super(User, self).save(*args, **kwargs)
+
     def __unicode__(self):
         return self.email

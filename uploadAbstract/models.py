@@ -2,11 +2,6 @@ from __future__ import unicode_literals
 from django.db import models
 from CORE.email_functionality import email_admin, email_client
 
-try:
-    from cStringIO import StringIO
-except ImportError:
-    from StringIO import StringIO
-
 
 class SubmittedAbstract(models.Model):
     salutation = models.CharField(max_length=6)
@@ -25,6 +20,8 @@ class SubmittedAbstract(models.Model):
         email_client(self, "CORE 2016 Abstract Upload", "You have uploaded an abstract.")
         email_admin(self, "New CORE 2016 Abstract", "Please find enclosed the details for the new DISS "
                                                     "2016 abstract upload.", sorted_self)
+
+        super(SubmittedAbstract, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.email
