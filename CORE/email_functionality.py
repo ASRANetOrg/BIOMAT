@@ -17,10 +17,11 @@ except ImportError:
 def email_client(self, subject, text):
     # Send the client an email
     html_content = render_to_string("../templates/baseTemplates/emailToUser.html", {'salutation': self.salutation,
-                                                                                    'last_name': self.last_name,
+                                                                                    'last_name':
+                                                                                        self.primary_author_surname,
                                                                                     'text_body': text})
     msg = EmailMultiAlternatives(subject, 'Dear ' + self.salutation + ' ' +
-                                 self.last_name + '/n' + text,
+                                 self.primary_author_surname + '/n' + text,
                                  'core@asranet.co.uk', [self.email], )
     msg.attach_alternative(html_content, "text/html")
     msg.attach_file('static/Images/asranetLogo.jpg')
@@ -32,7 +33,7 @@ def email_client(self, subject, text):
     fp.close()
     msg_img.add_header('Content-ID', '<{}>'.format(f))
     msg.attach(msg_img)
-    msg.send()
+    msg.send(fail_silently=True)
 
 
 def email_admin(self, subject, text, sorted_self):
@@ -60,5 +61,5 @@ def email_admin(self, subject, text, sorted_self):
     string_buffer.close()
 
     msg = EmailMultiAlternatives(subject, text, "core@asranet.co.uk", ["core@asranet.co.uk"])
-    msg.attach(self.first_name + self.last_name + "CORE.pdf", pdf, "application/pdf")
-    msg.send()
+    msg.attach(self.primary_author_first_name + self.primary_author_surname + "CORE.pdf", pdf, "application/pdf")
+    msg.send(fail_silently=True)

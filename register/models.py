@@ -28,10 +28,6 @@ class User(models.Model):
                        ["City", self.city], ["Country", self.country], ["Postcode", self.postcode],
                        ["Organisation", self.organisation], ["Paying Normal Fee", str(self.fee_normal)],
                        ["Paying Student Fee", str(self.fee_student)],
-
-
-
-
                        ]
 
         email_client(self, "CORE 2016 Conference Registration", "You are officially registered for CORE 2016")
