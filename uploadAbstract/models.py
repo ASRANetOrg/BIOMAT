@@ -20,7 +20,7 @@ class SubmittedAbstract(models.Model):
                        ["Paper Title", self.paper_title], ["Abstract", self.abstract],
                        ]
 
-        email_client(self, "CORE 2016 Abstract Upload", "Thank you for uploading your abstract to CORE 2016.")
+        email_client(self, "CORE 2016 Abstract Upload", "Thank you for uploading your abstract to CORE 2016")
         email_admin(self, "New CORE 2016 Abstract", "Please find enclosed the details for the new CORE "
                                                     "2016 abstract upload.", sorted_self)
 

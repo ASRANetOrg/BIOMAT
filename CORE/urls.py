@@ -68,6 +68,7 @@ urlpatterns = [
     url(r'^travel/', 'mainApp.views.travel', name='travel'),
     url(r'^register/', include('register.urls')),
     url(r'^uploadAbstract/', include('uploadAbstract.urls')),
+    url(r'^authorinstructions/', 'mainApp.views.author_instructions', name='authorInstructions'),
     url(r'^cookies/', 'mainApp.views.cookies', name='cookies'),
     url(r'^$', 'mainApp.views.index', name='index'),
     url(r'^index', 'mainApp.views.index', name='index'),

@@ -16,6 +16,12 @@ def venue(request):
     return render(request, 'venue.html', {"story_list": story_list, "title": "Venue"})
 
 
+def author_instructions(request):
+    story_list = Item.objects.filter(page__name="authorInstructions").order_by('order')
+    return render(request, 'baseTemplates/infoPageBase.html', {"story_list": story_list,
+                                                               "title": "Author Instructions"}, )
+
+
 def accomodation(request):
     return render(request, 'accomodation.html')
 
