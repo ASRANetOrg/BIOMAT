@@ -72,6 +72,7 @@ urlpatterns = [
     url(r'^cookies/', 'mainApp.views.cookies', name='cookies'),
     url(r'^$', 'mainApp.views.index', name='index'),
     url(r'^index', 'mainApp.views.index', name='index'),
+    url(r'^robots\.txt$', 'mainApp.views.robots', name='robots'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
 ]

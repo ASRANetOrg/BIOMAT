@@ -37,3 +37,7 @@ def travel(request):
 
 def cookies(request):
     return render(request, 'cookies.html')
+
+
+def robots(request):
+    return render(request, 'robots.txt')
