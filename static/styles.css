@@ -240,3 +240,8 @@ body > div.navbar-wrapper > div > nav > div > div.navbar-header > a {
 body > div.back-to-top > a {
     color: chocolate
 }
+
+.footer-title{
+    text-align: center;
+    background: rgba(210, 105, 30, .2);
+}
