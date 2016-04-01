@@ -18,10 +18,10 @@ def email_client(self, subject, text):
     # Send the client an email
     html_content = render_to_string("../templates/baseTemplates/emailToUser.html", {'salutation': self.salutation,
                                                                                     'last_name':
-                                                                                        self.primary_author_surname,
+                                                                                        self.last_name,
                                                                                     'text_body': text})
     msg = EmailMultiAlternatives(subject, 'Dear ' + self.salutation + ' ' +
-                                 self.primary_author_surname + '/n' + text,
+                                 self.last_name + '/n' + text,
                                  'core@asranet.co.uk', [self.email], )
     msg.attach_alternative(html_content, "text/html")
     msg.attach_file('static/Images/asranetLogo.jpg')
@@ -61,5 +61,5 @@ def email_admin(self, subject, text, sorted_self):
     string_buffer.close()
 
     msg = EmailMultiAlternatives(subject, text, "core@asranet.co.uk", ["core@asranet.co.uk"])
-    msg.attach(self.primary_author_first_name + self.primary_author_surname + "CORE.pdf", pdf, "application/pdf")
+    msg.attach(self.first_name + self.last_name + "CORE.pdf", pdf, "application/pdf")
     msg.send(fail_silently=True)
