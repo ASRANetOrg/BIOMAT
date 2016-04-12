@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-from CORE.email_functionality import email_admin, email_client
+from BIOMAT.email_functionality import email_admin, email_client
 from django.db import models
 
 
@@ -20,8 +20,8 @@ class SubmittedAbstract(models.Model):
                        ["Paper Title", self.paper_title], ["Abstract", self.abstract],
                        ]
 
-        email_client(self, "CORE 2016 Abstract Upload", "Thank you for uploading your abstract to CORE 2016")
-        email_admin(self, "New CORE 2016 Abstract", "Please find enclosed the details for the new CORE "
+        email_client(self, "BIOMAT 2016 Abstract Upload", "Thank you for uploading your abstract to BIOMAT 2016")
+        email_admin(self, "New BIOMAT 2016 Abstract", "Please find enclosed the details for the new BIOMAT "
                                                     "2016 abstract upload.", sorted_self)
 
         super(SubmittedAbstract, self).save(*args, **kwargs)

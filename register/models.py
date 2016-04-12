@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
-from CORE.email_functionality import email_admin, email_client
+from BIOMAT.email_functionality import email_admin, email_client
 
 try:
     from cStringIO import StringIO
@@ -30,8 +30,8 @@ class User(models.Model):
                        ["Paying Student Fee", str(self.fee_student)],
                        ]
 
-        email_client(self, "CORE 2016 Conference Registration", "You are officially registered for CORE 2016")
-        email_admin(self, "New CORE 2016 Registrant", "Please find enclosed the details for the new CORE "
+        email_client(self, "BIOMAT 2016 Conference Registration", "You are officially registered for BIOMAT 2016")
+        email_admin(self, "New BIOMAT 2016 Registrant", "Please find enclosed the details for the new BIOMAT "
                                                       "2016 registrant.", sorted_self)
 
         super(User, self).save(*args, **kwargs)

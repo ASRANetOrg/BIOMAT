@@ -22,7 +22,7 @@ def email_client(self, subject, text):
                                                                                     'text_body': text})
     msg = EmailMultiAlternatives(subject, 'Dear ' + self.salutation + ' ' +
                                  self.last_name + '/n' + text,
-                                 'core@asranet.co.uk', [self.email], )
+                                 'biomat@asranet.co.uk', [self.email], )
     msg.attach_alternative(html_content, "text/html")
     msg.attach_file('static/Images/asranetLogo.jpg')
     msg.mixed_subtype = 'related'
@@ -47,7 +47,7 @@ def email_admin(self, subject, text, sorted_self):
     string_buffer = StringIO()
 
     new_pdf = []
-    header = Paragraph("CORE Attendee Details", styleSheet['Heading1'])
+    header = Paragraph("BIOMAT Attendee Details", styleSheet['Heading1'])
     new_pdf.append(header)
 
     for element in sorted_self:
@@ -60,6 +60,6 @@ def email_admin(self, subject, text, sorted_self):
     pdf = string_buffer.getvalue()
     string_buffer.close()
 
-    msg = EmailMultiAlternatives(subject, text, "core@asranet.co.uk", ["core@asranet.co.uk"])
-    msg.attach(self.first_name + self.last_name + "CORE.pdf", pdf, "application/pdf")
+    msg = EmailMultiAlternatives(subject, text, "biomat@asranet.co.uk", ["biomat@asranet.co.uk"])
+    msg.attach(self.first_name + self.last_name + "BIOMAT.pdf", pdf, "application/pdf")
     msg.send(fail_silently=True)
