@@ -1,5 +1,17 @@
 @colour-headers: darkcyan;
+@header-font: "Montserrat", sans-serif;
+
 @paragraph-font: "Open Sans", sans-serif;
+
+@navbar-bg-colour: #5f5f5f;
+@navbar-font-colour: white;
+@navbar-font: "Oswald", sans-serif;
+@navbar-brand-font: "Roboto", sans-serif;
+
+@carousel-font-colour: white;
+@carousel-indicator-colour: rgba(70, 70, 70, .25);
+@carousel-indicator-colour-active: #444;
+@carousel-height: 50vw;
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
@@ -19,7 +31,7 @@ body {
 }
 
 .carousel-caption {
-  color: white;
+  color: @carousel-font-colour;
   text-shadow: 2px 2px #5a5a5a;
 }
 
@@ -65,7 +77,7 @@ body {
 
 /* Carousel base class */
 .carousel {
-  height: 500px;
+  height: @carousel-height;
   margin-bottom: 5%;
 }
 
@@ -76,7 +88,7 @@ body {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 500px;
+  height: @carousel-height;
   background-color: #777;
 }
 
@@ -85,16 +97,15 @@ body {
   top: 0;
   left: 0;
   min-width: 100%;
-  height: 500px;
+  height: @carousel-height;
 }
 
 .carousel-indicators li {
-  background-color: #999;
-  background-color: rgba(70,70,70,.25);
+  background-color: @carousel-indicator-colour;
 }
 
 .carousel-indicators .active {
-  background-color: #444;
+  background-color: @carousel-indicator-colour-active;
 }
 
 /* Center align the text within the three columns below the carousel */
@@ -125,7 +136,7 @@ body {
   line-height: 1;
   letter-spacing: -1px;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: @header-font;
   padding-bottom: 2%;
 }
 
@@ -148,6 +159,24 @@ body {
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 10%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  @carousel-height: 70vw;
+
+  .carousel {
+    height: @carousel-height;
+  }
+
+  .carousel .item {
+    height: @carousel-height;
+  }
+
+  .carousel-inner > .item > img {
+    height: @carousel-height;
   }
 
 }
@@ -216,18 +245,18 @@ body {
 }
 
 .navbar {
-  font-family: "Oswald", sans-serif;
+  font-family: @navbar-font;
   font-size: larger;
-  background-color: #5f5f5f;
+  background-color: @navbar-bg-colour;
 }
 
 #navbar > ul > li > a {
-  color: white;
+  color: @navbar-font-colour;
 }
 
 #navbar > ul > li > a:hover {
-  background-color: white;
-  color: #5f5f5f;
+  background-color: @navbar-font-colour;
+  color: @navbar-bg-colour;
 }
 
 body > div.navbar-wrapper > div > nav > div > div.navbar-header > a {
@@ -235,8 +264,8 @@ body > div.navbar-wrapper > div > nav > div > div.navbar-header > a {
 }
 
 .navbar-brand {
-  font-family: "Roboto", sans-serif;
-  color: white;
+  font-family: @navbar-brand-font;
+  color: @navbar-font-colour;
   font-size: larger;
 }
 
@@ -256,10 +285,10 @@ body > div.back-to-top > a {
 .footer-title {
 
   text-align: center;
-  background: rgba(0, 100, 0, .2);
+  background: fade(@colour-headers, 20%)
 
 }
 
-.center-text p{
+.center-text p {
   text-align: center;
 }

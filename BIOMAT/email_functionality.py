@@ -24,10 +24,10 @@ def email_client(self, subject, text):
                                  self.last_name + '/n' + text,
                                  'biomat@asranet.co.uk', [self.email], )
     msg.attach_alternative(html_content, "text/html")
-    msg.attach_file('static/Images/asranetLogo.jpg')
+    msg.attach_file('static/Images/ASRANet_Logo.png')
     msg.mixed_subtype = 'related'
 
-    f = 'asranetLogo.jpg'
+    f = 'ASRANet_Logo.png'
     fp = open(os.path.join(os.path.dirname(__file__), f), 'rb')
     msg_img = MIMEImage(fp.read())
     fp.close()

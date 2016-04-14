@@ -20,9 +20,12 @@ class UserForm(forms.ModelForm):
     country = forms.CharField(max_length=60, required=True)
     telephone = forms.CharField(max_length=15, required=True)
     email = forms.EmailField(max_length=60, required=True)
-    fee_normal = forms.BooleanField(label="I wish to register for the conference at the normal price of £450", required=False)
-    fee_student = forms.BooleanField(label="I wish to register for the conference at the reduced price of £300 "
+    fee_normal = forms.BooleanField(label="I wish to register for the conference at the normal price of £420",
+                                    required=False)
+    fee_student = forms.BooleanField(label="I wish to register for the conference at the reduced price of £300"
                                            "(bona fide students only)", required=False)
+    fee_one_day = forms.BooleanField(label="I wish to register for a one day pass to the conference for £250",
+                                     required=False)
 
     helper = FormHelper()
     helper.form_method = 'POST'
@@ -31,4 +34,4 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('salutation', 'first_name', 'last_name', 'organisation', 'address', 'city', 'postcode', 'country',
-                  'telephone', 'email', 'fee_normal', 'fee_student')
+                  'telephone', 'email', 'fee_normal', 'fee_student', 'fee_one_day')

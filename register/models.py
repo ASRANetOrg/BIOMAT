@@ -21,13 +21,14 @@ class User(models.Model):
     email = models.EmailField(max_length=60, unique=True)
     fee_normal = models.BooleanField(default=False)
     fee_student = models.BooleanField(default=False)
+    fee_one_day = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         sorted_self = [["Salutation", self.salutation], ["First name", self.first_name], ["Last Name", self.last_name],
                        ["Email", self.email], ["Telephone", self.telephone], ["Address", self.address],
                        ["City", self.city], ["Country", self.country], ["Postcode", self.postcode],
                        ["Organisation", self.organisation], ["Paying Normal Fee", str(self.fee_normal)],
-                       ["Paying Student Fee", str(self.fee_student)],
+                       ["Paying Student Fee", str(self.fee_student)], ["One Day Pass Fee", str(self.fee_one_day)],
                        ]
 
         email_client(self, "BIOMAT 2016 Conference Registration", "You are officially registered for BIOMAT 2016")

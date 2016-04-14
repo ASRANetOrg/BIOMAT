@@ -5,8 +5,8 @@ from django.db import models
 
 class SubmittedAbstract(models.Model):
     salutation = models.CharField(max_length=6)
-    primary_author_first_name = models.CharField(max_length=35)
-    primary_author_surname = models.CharField(max_length=35)
+    first_name = models.CharField(max_length=35)
+    last_name = models.CharField(max_length=35)
     co_authors_names = models.CharField(max_length=770)
     email = models.EmailField(max_length=60, unique=True)
     paper_title = models.CharField(max_length=60)
@@ -14,8 +14,8 @@ class SubmittedAbstract(models.Model):
 
     def save(self, *args, **kwargs):
 
-        sorted_self = [["Salutation", self.salutation], ["Primary Author First Name", self.primary_author_first_name],
-                       ["Primary Author Surname", self.primary_author_surname],
+        sorted_self = [["Salutation", self.salutation], ["Primary Author First Name", self.first_name],
+                       ["Primary Author Surname", self.last_name],
                        ["Co Authors Names", self.co_authors_names], ["Email", self.email],
                        ["Paper Title", self.paper_title], ["Abstract", self.abstract],
                        ]
