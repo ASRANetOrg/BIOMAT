@@ -30,6 +30,10 @@ def contactus(request):
     return render(request, 'contactUs.html')
 
 
+def otherconferences(request):
+    return render(request, 'otherconferences.html')
+
+
 def travel(request):
     story_list = Item.objects.filter(page__name="travel").order_by('order')
     return render(request, 'baseTemplates/infoPageBase.html', {"story_list": story_list, "title": "Travel"})

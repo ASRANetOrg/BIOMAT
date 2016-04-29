@@ -16,6 +16,36 @@ body {
   color: white;
   text-shadow: 2px 2px #5a5a5a;
 }
+.other-conference {
+  margin: 0;
+  text-align: center;
+  background-size: cover;
+}
+.other-conference-title {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: xx-large;
+}
+.other-conference {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  filter: blur(0);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.other-conference:hover {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 /* Special class on .container surrounding .navbar, used for positioning it into place. */

@@ -62,7 +62,7 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^venue/', 'mainApp.views.venue', name='venue'),
+    ##url(r'^venue/', 'mainApp.views.venue', name='venue'),
     url(r'^accomodation/', 'mainApp.views.accomodation', name='accomodation'),
     url(r'^contactus/', 'mainApp.views.contactus', name='contactus'),
     url(r'^travel/', 'mainApp.views.travel', name='travel'),
@@ -73,6 +73,7 @@ urlpatterns = [
     url(r'^$', 'mainApp.views.index', name='index'),
     url(r'^index', 'mainApp.views.index', name='index'),
     url(r'^robots\.txt$', 'mainApp.views.robots', name='robots'),
+    url(r'^otherconferences$', 'mainApp.views.otherconferences', name='otherconferences'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
 ]
