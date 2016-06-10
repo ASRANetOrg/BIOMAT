@@ -62,7 +62,7 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    ##url(r'^venue/', 'mainApp.views.venue', name='venue'),
+    url(r'^venue/', 'mainApp.views.venue', name='venue'),
     url(r'^accomodation/', 'mainApp.views.accomodation', name='accomodation'),
     url(r'^contactus/', 'mainApp.views.contactus', name='contactus'),
     url(r'^travel/', 'mainApp.views.travel', name='travel'),

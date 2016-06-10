@@ -11,9 +11,9 @@ def index(request):
     return render(request, 'index.html', {"story_list": story_list, "title": "Home"})
 
 
-#def venue(request):
-    #story_list = Item.objects.filter(page__name="venue").order_by('order')
-    #return render(request, 'venue.html', {"story_list": story_list, "title": "Venue"})
+def venue(request):
+    story_list = Item.objects.filter(page__name="venue").order_by('order')
+    return render(request, 'venue.html', {"story_list": story_list, "title": "Venue"})
 
 
 def author_instructions(request):
