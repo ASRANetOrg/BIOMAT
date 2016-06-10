@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u$sa_b%=d&li&3incxp9*w!4q6*2^v95y7cx1^k2wz-wyh1=#r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'bio-materials.co.uk', 'www.bio-materials.co.uk']
 

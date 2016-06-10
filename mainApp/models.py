@@ -15,7 +15,7 @@ class Item(models.Model):
     headline = models.CharField(max_length=40)
     element_id = models.CharField(max_length=40, unique=True)
     order = models.IntegerField()
-    text = models.CharField(max_length=3000)
+    text = models.CharField(max_length=4000)
 
     def table_class(self):
 
