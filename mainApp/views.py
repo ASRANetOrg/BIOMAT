@@ -88,7 +88,7 @@ def contactus(request):
 
 
 def otherconferences(request):
-    return render(request, 'otherconferences.html')
+    return render(request, 'otherConferences.html')
 
 
 def travel(request):

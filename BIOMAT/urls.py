@@ -73,7 +73,7 @@ urlpatterns = [
     url(r'^$', 'mainApp.views.index', name='index'),
     url(r'^index', 'mainApp.views.index', name='index'),
     url(r'^robots\.txt$', 'mainApp.views.robots', name='robots'),
-    url(r'^otherconferences$', 'mainApp.views.otherconferences', name='otherconferences'),
+    url(r'^otherconferences/', 'mainApp.views.otherconferences', name='otherconferences'),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
 ]
