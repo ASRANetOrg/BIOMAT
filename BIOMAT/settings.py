@@ -120,10 +120,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-
-# SSLIFY_DISABLE = True
+if DEBUG:
+    SSLIFY_DISABLE = True
+else:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
 EMAIL_HOST = 'mail.netcetera.co.uk'
 EMAIL_HOST_USER = 'biomaap@asranet.co.uk'
