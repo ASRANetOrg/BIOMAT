@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['biomat_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'bio-materials.co.uk', 'www.bio-materials.co.uk']
 
@@ -120,10 +120,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
-SSLIFY_DISABLE = True
+# SSLIFY_DISABLE = True
 
 EMAIL_HOST = 'mail.netcetera.co.uk'
 EMAIL_HOST_USER = 'biomat@asranet.co.uk'
