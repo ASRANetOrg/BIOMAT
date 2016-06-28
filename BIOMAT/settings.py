@@ -126,7 +126,7 @@ CSRF_COOKIE_SECURE = True
 # SSLIFY_DISABLE = True
 
 EMAIL_HOST = 'mail.netcetera.co.uk'
-EMAIL_HOST_USER = 'biomat@asranet.co.uk'
+EMAIL_HOST_USER = 'biomaap@asranet.co.uk'
 EMAIL_HOST_PASSWORD = os.environ['biomat_password']
 EMAIL_PORT = 25
 
