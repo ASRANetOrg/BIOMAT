@@ -15,6 +15,7 @@ except ImportError:
 
 
 def email_client(self, subject, text):
+
     # Send the client an email
     html_content = render_to_string("../templates/baseTemplates/emailToUser.html", {'salutation': self.salutation,
                                                                                     'last_name':
@@ -24,10 +25,10 @@ def email_client(self, subject, text):
                                  self.last_name + '/n' + text,
                                  'biomat@asranet.co.uk', [self.email], )
     msg.attach_alternative(html_content, "text/html")
-    msg.attach_file('static/Images/ASRANet_Logo.png')
+    msg.attach_file('static/Images/ASRANetLogo.jpg')
     msg.mixed_subtype = 'related'
 
-    f = 'ASRANet_Logo.png'
+    f = 'ASRANetLogo.jpg'
     fp = open(os.path.join(os.path.dirname(__file__), f), 'rb')
     msg_img = MIMEImage(fp.read())
     fp.close()
@@ -38,7 +39,7 @@ def email_client(self, subject, text):
 
 def email_admin(self, subject, text, sorted_self):
 
-    styleSheet = getSampleStyleSheet()
+    ssheet = getSampleStyleSheet()
 
     # Send the admin a PDF of client details
     response = HttpResponse(content_type='application/pdf')
@@ -47,12 +48,12 @@ def email_admin(self, subject, text, sorted_self):
     string_buffer = StringIO()
 
     new_pdf = []
-    header = Paragraph("BIOMAT Attendee Details", styleSheet['Heading1'])
+    header = Paragraph("BIOMAAP Attendee Details", ssheet['Heading1'])
     new_pdf.append(header)
 
     for element in sorted_self:
-        new_pdf.append(Paragraph(element[0], styleSheet['Heading3']))
-        new_pdf.append(Paragraph(element[1], styleSheet['BodyText']))
+        new_pdf.append(Paragraph(element[0], ssheet['Heading3']))
+        new_pdf.append(Paragraph(element[1], ssheet['BodyText']))
         new_pdf.append(Spacer(1, 2))
 
     doc = SimpleDocTemplate(string_buffer)
