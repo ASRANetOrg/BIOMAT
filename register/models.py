@@ -31,9 +31,9 @@ class User(models.Model):
                        ["Paying Student Fee", str(self.fee_student)], ["One Day Pass Fee", str(self.fee_one_day)],
                        ]
 
-        email_client(self, "BIOMAT 2016 Conference Registration", "You are officially registered for BIOMAAP 2016")
-        email_admin(self, "New BIOMAT 2016 Registrant", "Please find enclosed the details for the new BIOMAAP "
-                                                        "2016 registrant.", sorted_self)
+        email_client(self, "BIOMAAP 2017 Conference Registration", "You are officially registered for BIOMAAP 2017")
+        email_admin(self, "New BIOMAAP 2017 Registrant", "Please find enclosed the details for the new BIOMAAP "
+                                                        "2017 registrant.", sorted_self)
 
         super(User, self).save(*args, **kwargs)
 

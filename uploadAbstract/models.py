@@ -20,9 +20,9 @@ class SubmittedAbstract(models.Model):
                        ["Paper Title", self.paper_title], ["Abstract", self.abstract],
                        ]
 
-        email_client(self, "BIOMAT 2016 Abstract Upload", "Thank you for uploading your abstract to BIOMAT 2016")
-        email_admin(self, "New BIOMAT 2016 Abstract", "Please find enclosed the details for the new BIOMAT "
-                                                    "2016 abstract upload.", sorted_self)
+        email_client(self, "BIOMAAP 2017 Abstract Upload", "Thank you for uploading your abstract to BIOMAAP 2017")
+        email_admin(self, "New BIOMAAP 2017 Abstract", "Please find enclosed the details for the new BIOMAAP "
+                                                    "2017 abstract upload.", sorted_self)
 
         super(SubmittedAbstract, self).save(*args, **kwargs)
 
