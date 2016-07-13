@@ -23,7 +23,7 @@ def email_client(self, subject, text):
                                                                                     'text_body': text})
     msg = EmailMultiAlternatives(subject, 'Dear ' + self.salutation + ' ' +
                                  self.last_name + '/n' + text,
-                                 'biomat@asranet.co.uk', [self.email], )
+                                 'biomaap@asranet.co.uk', [self.email], )
     msg.attach_alternative(html_content, "text/html")
     msg.attach_file('static/Images/ASRANetLogo.png')
     msg.mixed_subtype = 'related'
@@ -61,6 +61,6 @@ def email_admin(self, subject, text, sorted_self):
     pdf = string_buffer.getvalue()
     string_buffer.close()
 
-    msg = EmailMultiAlternatives(subject, text, "biomat@asranet.co.uk", ["biomat@asranet.co.uk"])
-    msg.attach(self.first_name + self.last_name + "BIOMAT.pdf", pdf, "application/pdf")
+    msg = EmailMultiAlternatives(subject, text, "biomaap@asranet.co.uk", ["biomaap@asranet.co.uk"])
+    msg.attach(self.first_name + self.last_name + "BIOMAAP.pdf", pdf, "application/pdf")
     msg.send(fail_silently=True)
